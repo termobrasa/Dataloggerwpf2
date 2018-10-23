@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="Datalogger.Views.TestesV"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Datalogger.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5">
+            <DockPanel>
+                <Label Content="Nº Teste: "></Label>
+                <TextBox Name="n_teste_txt" Width="100" HorizontalAlignment="Left" IsEnabled="False" > </TextBox>
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Produto: "></Label>
+                <TextBox  Name="nome_teste_txt" IsEnabled="False"  ></TextBox>
+            </DockPanel>
+            
+            </StackPanel>
+            
+        
+            <DockPanel Grid.Row="1" Grid.RowSpan="5" Grid.Column="0" Grid.ColumnSpan="4" >
+            <DataGrid  Name="Datagrid1"  >
+               
+                
+
+            </DataGrid>
+        </DockPanel>
+        <StackPanel Grid.Column="4" Grid.ColumnSpan="5"  Grid.Row="1" Grid.RowSpan="5" Margin="20,40,60,0" >
+            <DockPanel  Margin="10,10">
+            <Label Content="Temp Ent água(ºC):"></Label>
+            <TextBox Name="temp_ent" HorizontalAlignment="Right" Width="40" > </TextBox>
+            </DockPanel>
+            <DockPanel Margin="10,10">
+            <Label Content="Temp Sai água(ºC):"></Label>
+                <TextBox Name="Temp_sai"  HorizontalAlignment="Right" Width="40"></TextBox>
+            </DockPanel>
+            <DockPanel Margin="10,10">
+            <Label Content="Temp Ambiente(ºC):"></Label>
+                <TextBox Name="temp_amb"  HorizontalAlignment="Right" Width="40"></TextBox>
+            </DockPanel>
+            <DockPanel Margin="10,10">
+            <Label Content="P baixa(bar):"></Label>
+                <TextBox Name="p_bai"  HorizontalAlignment="Right" Width="40"></TextBox>
+            </DockPanel>
+            <DockPanel Margin="10,10">
+            <Label Content="P alta(bar):"></Label>
+                <TextBox Name="p_alta"  HorizontalAlignment="Right" Width="40"></TextBox>
+            </DockPanel>
+            <DockPanel Margin="10,10">
+            <Label Content="Consumo (W):"></Label>
+                <TextBox Name="consumo"  HorizontalAlignment="Right" Width="40"></TextBox>
+            </DockPanel>
+
+            <Label Content="Observações:" Margin="10,10"></Label>
+            <TextBox Name="obs"></TextBox>
+            <Button Content="Inserir" Name="inserir" Click="inserir_Click" ></Button>
+
+        </StackPanel>
+        <DockPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" >
+            
+        </DockPanel>
+    </Grid>
+</UserControl>

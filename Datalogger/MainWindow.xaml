@@ -1,0 +1,73 @@
+﻿<Window x:Class="Datalogger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Datalogger"       
+        xmlns:view="clr-namespace:Datalogger.Views"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="S.A.D - Termobrasa" Height="700" Width="1200"  Icon="C:\Users\joao\source\repos\Dataloggerwpf2\Datalogger\Imagens\0d28c799-1628-4000-b891-750c7423ada9_LARGE.ico">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="5"  >
+            <StackPanel>
+                <Button x:Name="Novoteste_btn" Content="Novo Teste" Click="Novoteste_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch"></Button>
+                <Button x:Name="Testes_btn" Content="Dados" Click="Testes_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch"></Button>
+                <Button  x:Name="Grafico_btn" Content="Grafico" Click="Grafico_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch"></Button>                              
+                <Button x:Name="Lista_btn" Content="Lista de Sensores" Click="Lista_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}"  HorizontalAlignment="Stretch"></Button>
+                <Button x:Name="Teste24h_btn" Content="Lista de Testes" Click="Teste24h_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch" ></Button>
+                <Button x:Name="Relatorio_btn" Content="Relatorio" Click="Relatorio_btn_Click"  Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch" ></Button>
+
+
+
+                <ComboBox x:Name="ComboB" Padding="10,10,10,10" Margin="0,10,0,20" />
+                <DockPanel HorizontalAlignment="Center">
+                    <Button x:Name="btnlig" Content="Ligar" Padding="25,0" Margin="10,10,10,10" Click="btnlig_Click" ></Button>
+                    <Button x:Name="btndesl" Content="Desligar" Padding="25,0" Margin="10,10,10,10" Click="btndesl_Click"></Button>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Right">
+                    <Label x:Name="label1" Content="Desligado" Margin="10,10,10,10"></Label>
+                    <Ellipse x:Name="Circle" Fill="Red" Stroke="Black" Height="30" Width="30" Margin="10,10,10,10" ></Ellipse>
+                </DockPanel>
+
+            </StackPanel>
+
+        </DockPanel>
+
+        <ContentControl x:Name="content1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
+            <view:GraficoV     />            
+        </ContentControl>
+        <ContentControl x:Name="content2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
+            <view:Teste24hV  />
+        </ContentControl>
+        <ContentControl x:Name="content3" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
+            <view:NovoTesteV    />
+        </ContentControl>
+        <ContentControl x:Name="content4" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
+            <view:TestesV    />
+        </ContentControl>
+        <ContentControl x:Name="content5" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">            
+            <view:ListaV/>            
+        </ContentControl>
+        <ContentControl x:Name="content6" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
+            <view:Relatorio/>
+        </ContentControl>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datalogger", "Datalogger\Datalogger.csproj", "{AA823FA2-45AE-402E-9AF5-1B7DA7CCDFD3}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{C570C0E3-5358-4F8C-A5F1-EC21CE2CA67F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA823FA2-45AE-402E-9AF5-1B7DA7CCDFD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA823FA2-45AE-402E-9AF5-1B7DA7CCDFD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA823FA2-45AE-402E-9AF5-1B7DA7CCDFD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA823FA2-45AE-402E-9AF5-1B7DA7CCDFD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C570C0E3-5358-4F8C-A5F1-EC21CE2CA67F}.Debug|Any CPU.ActiveCfg = Debug
+		{C570C0E3-5358-4F8C-A5F1-EC21CE2CA67F}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3A9A310-B98F-46EC-AD36-ED4CCC0FE81A}
+	EndGlobalSection
+EndGlobal
