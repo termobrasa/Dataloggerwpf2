@@ -7,7 +7,7 @@
         xmlns:view="clr-namespace:Datalogger.Views"
         xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="S.A.D - Termobrasa" Height="700" Width="1200"  Icon="C:\Users\joao\source\repos\Dataloggerwpf2\Datalogger\Imagens\0d28c799-1628-4000-b891-750c7423ada9_LARGE.ico">
+        Title="S.A.D - Termobrasa" Background="#FF424242" Height="700" Width="1200"  Icon="C:\Users\joao\source\repos\Dataloggerwpf2\Datalogger\Imagens\0d28c799-1628-4000-b891-750c7423ada9_LARGE.ico">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,21 +24,25 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Image Source="Imagens/0d28c799-1628-4000-b891-750c7423ada9_LARGE.png"></Image>
+        <DockPanel Grid.Column="1" Grid.ColumnSpan="4">
+            <TextBlock Text="S.A.D" HorizontalAlignment="Center" FontSize="80" Foreground="#FFFF9800"></TextBlock>
+        </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="5"  >
             <StackPanel>
-                <Button x:Name="Novoteste_btn" Content="Novo Teste" Click="Novoteste_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch"></Button>
-                <Button x:Name="Testes_btn" Content="Dados" Click="Testes_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch"></Button>
-                <Button  x:Name="Grafico_btn" Content="Grafico" Click="Grafico_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch"></Button>                              
-                <Button x:Name="Lista_btn" Content="Lista de Sensores" Click="Lista_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}"  HorizontalAlignment="Stretch"></Button>
-                <Button x:Name="Teste24h_btn" Content="Lista de Testes" Click="Teste24h_btn_Click" Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch" ></Button>
-                <Button x:Name="Relatorio_btn" Content="Relatorio" Click="Relatorio_btn_Click"  Padding="10,0" Margin="0,10,0,20" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Stretch" ></Button>
+                <Button x:Name="Novoteste_btn" Content="Novo Teste" Click="Novoteste_btn_Click" Padding="10,0" Margin="0,10,0,20" HorizontalAlignment="Stretch" Foreground="White"></Button>
+                <Button x:Name="Testes_btn" Content="Dados" Click="Testes_btn_Click" Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
+                <Button  x:Name="Grafico_btn" Content="Grafico" Click="Grafico_btn_Click" Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
+                <Button x:Name="Lista_btn" Content="Lista de Sensores" Click="Lista_btn_Click" Padding="10,0" Margin="0,10,0,20"   HorizontalAlignment="Stretch" Foreground="White"></Button>
+                <Button x:Name="Teste24h_btn" Content="Lista de Testes" Click="Teste24h_btn_Click" Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
+                <Button x:Name="Relatorio_btn" Content="Relatorio" Click="Relatorio_btn_Click"  Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
 
 
 
                 <ComboBox x:Name="ComboB" Padding="10,10,10,10" Margin="0,10,0,20" />
                 <DockPanel HorizontalAlignment="Center">
-                    <Button x:Name="btnlig" Content="Ligar" Padding="25,0" Margin="10,10,10,10" Click="btnlig_Click" ></Button>
-                    <Button x:Name="btndesl" Content="Desligar" Padding="25,0" Margin="10,10,10,10" Click="btndesl_Click"></Button>
+                    <Button x:Name="btnlig" Content="Ligar" Padding="25,0" Margin="10,10,10,10" Click="btnlig_Click" Foreground="White"></Button>
+                    <Button x:Name="btndesl" Content="Desligar" Padding="25,0" Margin="10,10,10,10" Click="btndesl_Click" Foreground="White"></Button>
                 </DockPanel>
                 <DockPanel HorizontalAlignment="Right">
                     <Label x:Name="label1" Content="Desligado" Margin="10,10,10,10"></Label>

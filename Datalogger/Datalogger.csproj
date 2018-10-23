@@ -201,6 +201,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Client.mdf</DependentUpon>
     </Content>
+    <Resource Include="Imagens\0d28c799-1628-4000-b891-750c7423ada9_LARGE.png" />
     <Resource Include="Imagens\0d28c799-1628-4000-b891-750c7423ada9_LARGE.ico" />
   </ItemGroup>
   <ItemGroup>

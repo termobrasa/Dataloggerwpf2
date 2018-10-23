@@ -7,8 +7,9 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="{DynamicResource MaterialDesignPaper}"
+             Background="#FF424242"
              FontFamily="{DynamicResource MaterialDesignFont}"
+             Foreground="White"
              FontSize="25"
              >
     <Grid>
@@ -30,41 +31,41 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <DockPanel Grid.ColumnSpan="2" Grid.Column="1" Margin="20">
-            <Label Content="Volume: " ></Label>
-            <TextBox Name="volume_txt"  VerticalAlignment="Top" ></TextBox>
+            <Label Content="Volume: " Foreground="#FFFF9800" ></Label>
+            <TextBox Name="volume_txt"  VerticalAlignment="Top" Foreground="White" ></TextBox>
         </DockPanel>
         <DockPanel Grid.Column="3" Grid.ColumnSpan="3" Margin="20">
-            <Label Content="Consumo Total: "></Label>
-            <TextBox Name="Consumo_txt" VerticalAlignment="Top"></TextBox>
+            <Label Content="Consumo Total: " Foreground="#FFFF9800"></Label>
+            <TextBox Name="Consumo_txt" VerticalAlignment="Top" Foreground="White"></TextBox>
         </DockPanel>
         <DockPanel Grid.Column="6">
-            <Button Name="atualiza_btn" Content="Atualizar" Click="atualiza_btn_Click" ></Button>
+            <Button Name="atualiza_btn" Content="Atualizar" Click="atualiza_btn_Click" Foreground="White" ></Button>
         </DockPanel>
 
         <StackPanel  Margin="20" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <TextBlock Text="COP:" Style="{DynamicResource MaterialDesignTitleTextBlock}"></TextBlock>
-            <materialDesign:Card Height="100" VerticalAlignment="Stretch" >
+            <materialDesign:Card Height="100" VerticalAlignment="Stretch" Background="#FFFF9800" >
                 <TextBlock Name="cop_bloc" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"  ></TextBlock>
             </materialDesign:Card>
         </StackPanel>
 
         <StackPanel  Margin="20" Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" >
             <TextBlock Text="Tempo de Aquecimento:" Style="{DynamicResource MaterialDesignTitleTextBlock}"></TextBlock>
-            <materialDesign:Card Height="100" VerticalAlignment="Stretch" >
+            <materialDesign:Card Height="100" VerticalAlignment="Stretch" Background="#FFFF9800" >
                 <TextBlock  Name="temp_aque_txt" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"  ></TextBlock>
             </materialDesign:Card>
         </StackPanel>
 
         <StackPanel  Margin="20" Grid.Row="4" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2" >
             <TextBlock Text="Aquecimento por hora:" Style="{DynamicResource MaterialDesignTitleTextBlock}"></TextBlock>
-            <materialDesign:Card Height="100" VerticalAlignment="Stretch" >
+            <materialDesign:Card Height="100" VerticalAlignment="Stretch" Background="#FFFF9800" >
                 <TextBlock  Name="aque_bloc" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"  ></TextBlock>
             </materialDesign:Card>
         </StackPanel>
 
         <StackPanel  Margin="20" Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2" >
             <TextBlock Text="Consumo total:" Style="{DynamicResource MaterialDesignTitleTextBlock}"></TextBlock>
-            <materialDesign:Card Height="100" VerticalAlignment="Stretch" >
+            <materialDesign:Card Height="100" VerticalAlignment="Stretch" Background="#FFFF9800" >
                 <TextBlock  Name="consumobloc" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"  ></TextBlock>
             </materialDesign:Card>
         </StackPanel>
