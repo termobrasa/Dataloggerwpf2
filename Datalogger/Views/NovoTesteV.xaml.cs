@@ -83,10 +83,7 @@ namespace Datalogger.Views
                 Database.Database.Excute(q3);                             
                
                 update_lista_testes();
-
-                if (tap_test.IsChecked == true)
-                    MainWindow.serial.Write(tap_test_m);
-               
+                                              
             }
             else
             {
@@ -113,7 +110,7 @@ namespace Datalogger.Views
             Regex regex = new Regex("[^a-zA-Z0-9_-]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-        //ddsadas
+       
         
         public void update_table()
         {
@@ -147,19 +144,7 @@ namespace Datalogger.Views
 
 
         }
-
-        private void comboMaq_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (MainWindow.serial.IsOpen == true)
-            {
-                if (comboMaq.SelectedIndex == 0)
-                    tap_test_m = "S";
-                if (comboMaq.SelectedIndex == 1)
-                    tap_test_m = "M";
-                if (comboMaq.SelectedIndex == 2)
-                    tap_test_m = "X";
-            }
-        }
+               
 
         private void update_lista_testes()
         {

@@ -128,6 +128,9 @@
     <Compile Include="Views\Dados.xaml.cs">
       <DependentUpon>Dados.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Teste 24h.xaml.cs">
+      <DependentUpon>Teste 24h.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -161,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Teste 24h.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

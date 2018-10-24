@@ -7,7 +7,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="#FF424242"
+             Background="#FF686868"
              FontFamily="{DynamicResource MaterialDesignFont}"
              Foreground="White"
              FontSize="25"
@@ -44,7 +44,7 @@
 
         <StackPanel  Margin="20" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <TextBlock Text="COP:" Style="{DynamicResource MaterialDesignTitleTextBlock}"></TextBlock>
-            <materialDesign:Card Height="100" VerticalAlignment="Stretch" Background="#FFFF9800" >
+            <materialDesign:Card Height="100" VerticalAlignment="Stretch" Background="#3e3e3e" >
                 <TextBlock Name="cop_bloc" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"  ></TextBlock>
             </materialDesign:Card>
         </StackPanel>

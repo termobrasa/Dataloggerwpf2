@@ -121,7 +121,29 @@ namespace Datalogger.Database
 
         }
 
-       
+        public static List<string> teste24(string req)
+        {
+            List<string> dados = new List<string>();
+
+            OpenCnx();
+            cmd = new SqlCommand(req, cnx);
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+
+                for (int i = 0; i < dr.FieldCount; i++)
+                {
+                    dados.Add(dr.GetValue(i).ToString());
+                   // MessageBox.Show(dr.GetValue(i).ToString());
+                }
+
+            }
+            CloseCnx(); ;
+
+            return (dados);
+
+        }
 
 
 

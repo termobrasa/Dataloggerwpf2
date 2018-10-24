@@ -38,15 +38,8 @@
             <Button Name="Novoteste_btn" Content="Novo teste" Margin="10,0,10,0" Click="Novoteste_btn_Click" Foreground="White"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="5" Grid.RowSpan="4">
-            <Label Content="Maquina" Foreground="#FFFF9800"></Label>
-            <ComboBox  Name="comboMaq" SelectionChanged="comboMaq_SelectionChanged" Margin="5" >
-                <ComboBoxItem Name="ms">S</ComboBoxItem>
-                <ComboBoxItem Name="ml">M</ComboBoxItem>
-                <ComboBoxItem Name="mxl">XL</ComboBoxItem>
-            </ComboBox>            
             <Label Content="Tempo de amostra:" Margin="5" Foreground="#FFFF9800"></Label>
             <TextBox Name="tempo_amos_txt" PreviewTextInput="tempo_amos_txt_PreviewTextInput" Margin="5"></TextBox>
-            <CheckBox Name="tap_test" Content="Teste de tiragens" ></CheckBox>
 
         </StackPanel>
         <Button Grid.Row="5" Grid.Column="5" Margin="20" Content="Gravar excel" Click="Button_Click" Foreground="White"></Button>

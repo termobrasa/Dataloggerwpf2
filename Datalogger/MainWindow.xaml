@@ -7,8 +7,8 @@
         xmlns:view="clr-namespace:Datalogger.Views"
         xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="S.A.D - Termobrasa" Background="#FF424242" Height="700" Width="1200"  Icon="C:\Users\joao\source\repos\Dataloggerwpf2\Datalogger\Imagens\0d28c799-1628-4000-b891-750c7423ada9_LARGE.ico">
-    
+        Title="S.A.D - Termobrasa"  WindowStyle="None" Background="#FF686868" Height="700" Width="1200"  Icon="C:\Users\joao\source\repos\Dataloggerwpf2\Datalogger\Imagens\0d28c799-1628-4000-b891-750c7423ada9_LARGE.ico">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,27 +18,35 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="132*"/>
+            <RowDefinition Height="135*"/>
+            <RowDefinition Height="134*"/>
+            <RowDefinition Height="103*"/>
+            <RowDefinition Height="166*"/>
         </Grid.RowDefinitions>
-        <Image Source="Imagens/0d28c799-1628-4000-b891-750c7423ada9_LARGE.png"></Image>
-        <DockPanel Grid.Column="1" Grid.ColumnSpan="4">
-            <TextBlock Text="S.A.D" HorizontalAlignment="Center" FontSize="80" Foreground="#FFFF9800"></TextBlock>
+        
+        <DockPanel Background="White">                    
+            <Image Source="Imagens/0d28c799-1628-4000-b891-750c7423ada9_LARGE.png" ></Image>
         </DockPanel>
-        <DockPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="5"  >
-            <StackPanel>
+
+        <DockPanel Grid.ColumnSpan="5" Grid.RowSpan="1" Grid.Column="1" Grid.Row="0" Background="#ff9800">
+            <TextBlock Text="S.A.D" HorizontalAlignment="Center" FontSize="80" Foreground="White"></TextBlock>
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.RowSpan="5" Grid.Row="1" Background="#FF5A5A5A"  >
+            <StackPanel >
                 <Button x:Name="Novoteste_btn" Content="Novo Teste" Click="Novoteste_btn_Click" Padding="10,0" Margin="0,10,0,20" HorizontalAlignment="Stretch" Foreground="White"></Button>
                 <Button x:Name="Testes_btn" Content="Dados" Click="Testes_btn_Click" Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
                 <Button  x:Name="Grafico_btn" Content="Grafico" Click="Grafico_btn_Click" Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
                 <Button x:Name="Lista_btn" Content="Lista de Sensores" Click="Lista_btn_Click" Padding="10,0" Margin="0,10,0,20"   HorizontalAlignment="Stretch" Foreground="White"></Button>
-                <Button x:Name="Teste24h_btn" Content="Lista de Testes" Click="Teste24h_btn_Click" Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
+                <Button x:Name="Lista_testes_btn" Content="Lista de Testes" Click="Lista_testes_Click" Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
                 <Button x:Name="Relatorio_btn" Content="Relatorio" Click="Relatorio_btn_Click"  Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
+                <Button x:Name="Teste_24h_btn" Content="Tiragens" Click="Teste_24h_btn_Click"  Padding="10,0" Margin="0,10,0,20"  HorizontalAlignment="Stretch" Foreground="White"></Button>
 
+            </StackPanel>
 
-
+        </DockPanel>
+        <DockPanel Grid.Row="4" Grid.Column="0" Background="#FF5A5A5A" Margin="0,0.52,0.4,-1.12" >
+            <StackPanel Background="#FF424242" Grid.RowSpan="5">
                 <ComboBox x:Name="ComboB" Padding="10,10,10,10" Margin="0,10,0,20" />
                 <DockPanel HorizontalAlignment="Center">
                     <Button x:Name="btnlig" Content="Ligar" Padding="25,0" Margin="10,10,10,10" Click="btnlig_Click" Foreground="White"></Button>
@@ -48,30 +56,30 @@
                     <Label x:Name="label1" Content="Desligado" Margin="10,10,10,10"></Label>
                     <Ellipse x:Name="Circle" Fill="Red" Stroke="Black" Height="30" Width="30" Margin="10,10,10,10" ></Ellipse>
                 </DockPanel>
-
             </StackPanel>
-
         </DockPanel>
 
-        <ContentControl x:Name="content1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
-            <view:GraficoV     />            
+        <ContentControl x:Name="content1" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" Margin="20" >
+            <view:GraficoV     />
         </ContentControl>
-        <ContentControl x:Name="content2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
+        <ContentControl x:Name="content2" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" Margin="20">
             <view:Teste24hV  />
         </ContentControl>
-        <ContentControl x:Name="content3" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
+        <ContentControl x:Name="content3" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" Margin="20">
             <view:NovoTesteV    />
         </ContentControl>
-        <ContentControl x:Name="content4" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
+        <ContentControl x:Name="content4" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" Margin="20">
             <view:TestesV    />
         </ContentControl>
-        <ContentControl x:Name="content5" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">            
-            <view:ListaV/>            
+        <ContentControl x:Name="content5" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" Margin="20">
+            <view:ListaV/>
         </ContentControl>
-        <ContentControl x:Name="content6" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5">
+        <ContentControl x:Name="content6" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" Margin="20" >
             <view:Relatorio/>
         </ContentControl>
-
+        <ContentControl x:Name="content7" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" Margin="20">
+            <view:Teste_24h/>
+        </ContentControl>
 
     </Grid>
 </Window>
