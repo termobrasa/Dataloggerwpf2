@@ -74,7 +74,7 @@ namespace Datalogger.Views
             if (lastrow.Any() == true)
             {
 
-                Points1.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[1])));
+              /*  Points1.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[1])));
                 Points2.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[2])));
                 Points3.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[3])));
                 Points4.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[4])));
@@ -89,7 +89,7 @@ namespace Datalogger.Views
                 Points13.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[13])));
                 Points14.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[14])));
                 Points15.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[15])));
-               // Points16.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[16])));
+               // Points16.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[16])));*/
 
                 oxyPlot.InvalidatePlot(true);
                 lastrow.Clear();

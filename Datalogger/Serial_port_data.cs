@@ -23,7 +23,7 @@ namespace Datalogger
 
 
         public static List<string> tempdataux = new List<string>();
-        public static List<float> tempdata = new List<float>();
+        public static List<string> tempdata = new List<string>();
         public static List<double> tempdata1 = new List<double>();
 
         public static void Serialr()
@@ -55,8 +55,8 @@ namespace Datalogger
                 tempdataux[0] = "1";
                 for (int i = 0; i < 17; i++)
                 {
-                    tempdata.Add(1);
-                    tempdata[i] = Single.Parse(tempdataux[i], CultureInfo.InvariantCulture);
+                    tempdata.Add("1");
+                    tempdata[i] = tempdataux[i];
                                                           
                 }
                 

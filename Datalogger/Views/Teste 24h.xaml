@@ -34,6 +34,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Date}" ClipboardContentBinding="{x:Null}" Header="Date"/>
                 <DataGridTextColumn Binding="{Binding Path=Estado}" ClipboardContentBinding="{x:Null}" Header="Estado"/>
+                <DataGridTextColumn Binding="{Binding Path=Valvula}" ClipboardContentBinding="{x:Null}" Header="Valvula"/>
             </DataGrid.Columns>
         </DataGrid>
         

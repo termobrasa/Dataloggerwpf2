@@ -1,6 +1,7 @@
 ﻿using Spire.Xls;
 using System;
 using System.Data;
+using System.Globalization;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -117,15 +118,19 @@ namespace Datalogger.Views
             if (Serial_port_data.Datacomplete == true)
             {
 
-                string q1 = "INSERT into " + novotexte_txt.Text + " (Date,"+ Database.Database.id[0] +"," + Database.Database.id[1] + "," + Database.Database.id[2] + "," + Database.Database.id[3] + "," + Database.Database.id[4] + "," + Database.Database.id[5] + "," +
-                     "" + Database.Database.id[6] + "," + Database.Database.id[7] + "," + Database.Database.id[8] + "," + Database.Database.id[9] + "," +
-                     "" + Database.Database.id[10] + "," + Database.Database.id[11] + "," + Database.Database.id[12] + "," + Database.Database.id[13] + "," +
-                     "" + Database.Database.id[14] + ") values('" + DateTime.Now + "'," + Serial_port_data.tempdata[1] + "," + "" + Serial_port_data.tempdata[2] + "," +
-                     "" + Serial_port_data.tempdata[3] + "," + Serial_port_data.tempdata[4] + "," + Serial_port_data.tempdata[5] + "," + "" + Serial_port_data.tempdata[6] + "," +
-                     "" + Serial_port_data.tempdata[7] + "," + Serial_port_data.tempdata[8] + "," + Serial_port_data.tempdata[9] + "," + "" + Serial_port_data.tempdata[10] + "," +
-                     "" + Serial_port_data.tempdata[11] + "," + Serial_port_data.tempdata[12] + "," + Serial_port_data.tempdata[13] + "," + "" + Serial_port_data.tempdata[14] + "," + Serial_port_data.tempdata[15] + ")";
-                
+              
 
+
+                 string q1 = "INSERT into " + novotexte_txt.Text + " (Date,"+ Database.Database.id[0].Replace('.', ',') + "," + Database.Database.id[1] + "," + Database.Database.id[2] + "," + Database.Database.id[3] + "," + Database.Database.id[4] + "," + Database.Database.id[5] + "," +
+                      "" + Database.Database.id[6] + "," + Database.Database.id[7] + "," + Database.Database.id[8] + "," + Database.Database.id[9] + "," +
+                      "" + Database.Database.id[10] + "," + Database.Database.id[11] + "," + Database.Database.id[12] + "," + Database.Database.id[13] + "," +
+                      "" + Database.Database.id[14] + ", "+ Database.Database.id[15] + ") " +
+                      "values('" + DateTime.Now + "'," + Serial_port_data.tempdata[1] + "," + "" + Serial_port_data.tempdata[2] + "," +
+                      "" + Serial_port_data.tempdata[3] + "," + Serial_port_data.tempdata[4] + "," + Serial_port_data.tempdata[5] + "," + "" + Serial_port_data.tempdata[6] + "," +
+                      "" + Serial_port_data.tempdata[7] + "," + Serial_port_data.tempdata[8] + "," + Serial_port_data.tempdata[9] + "," + "" + Serial_port_data.tempdata[10] + "," +
+                      "" + Serial_port_data.tempdata[11] + "," + Serial_port_data.tempdata[12] + "," + Serial_port_data.tempdata[13] + "," + "" + Serial_port_data.tempdata[14] + "," + Serial_port_data.tempdata[15] + "," + Serial_port_data.tempdata[16] + ")";
+                      
+               
 
                 string q2 = "select * from " + novotexte_txt.Text + "";
                 Database.Database.Excute(q1);

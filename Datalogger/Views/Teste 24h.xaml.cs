@@ -41,14 +41,14 @@ namespace Datalogger.Views
             string req = "select * from CicloM WHERE ID = "+i+""; 
             dados = Database.Database.teste24(req);
             timer24hon.Interval = new TimeSpan(0, 0, int.Parse(dados[1]));
+
             if (int.Parse(dados[2]) != 0)
             {
                 timer24hoff.Interval = new TimeSpan(0, 0, int.Parse(dados[2]));                
-                string aux = "val" + dados[3] + "on";
-                MessageBox.Show(aux);
+                string aux = "val" + dados[3] + "on";               
                 MainWindow.serial.Write(aux);
                 timer24hoff.Start();
-                var data = new Test { Date = DateTime.Now.ToString(), Estado = "on" };
+                var data = new Test { Date = DateTime.Now.ToString(), Estado = "on" , Valvula=dados[3] };
                 datagrid1.Items.Add(data);
             }
 
@@ -56,13 +56,12 @@ namespace Datalogger.Views
 
         private void timer24hoff_Tick(object sender, EventArgs e)
         {            
-            string aux = "val" + dados[3] + "off";
-            MessageBox.Show(aux);
+            string aux = "val" + dados[3] + "off";            
             MainWindow.serial.Write(aux);
             timer24hoff.Stop();
 
 
-            var data = new Test { Date = DateTime.Now.ToString(), Estado = "off" };
+            var data = new Test { Date = DateTime.Now.ToString(), Estado = "off" , Valvula = dados[3] };
             datagrid1.Items.Add(data);
 
             dados.Clear();
@@ -77,6 +76,7 @@ namespace Datalogger.Views
         public class Test
         {
             public string Date { get; set; }
+            public string Valvula { get; set; }
             public string Estado { get; set; }
         }
     }
