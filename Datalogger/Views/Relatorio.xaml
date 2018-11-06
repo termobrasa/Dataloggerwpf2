@@ -49,14 +49,14 @@
             </materialDesign:Card>
         </StackPanel>
 
-        <StackPanel  Margin="20" Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+        <StackPanel  Margin="20" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" >
             <TextBlock Text="Tempo de Aquecimento:" Style="{DynamicResource MaterialDesignTitleTextBlock}"></TextBlock>
             <materialDesign:Card Height="100" VerticalAlignment="Stretch" Background="#FFFF9800" >
                 <TextBlock  Name="temp_aque_txt" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"  ></TextBlock>
             </materialDesign:Card>
         </StackPanel>
 
-        <StackPanel  Margin="20" Grid.Row="4" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+        <StackPanel  Margin="20" Grid.Row="3" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2" >
             <TextBlock Text="Aquecimento por hora:" Style="{DynamicResource MaterialDesignTitleTextBlock}"></TextBlock>
             <materialDesign:Card Height="100" VerticalAlignment="Stretch" Background="#FFFF9800" >
                 <TextBlock  Name="aque_bloc" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"  ></TextBlock>
@@ -70,7 +70,9 @@
             </materialDesign:Card>
         </StackPanel>
 
-
+        <DockPanel Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="5">
+            <Button Name="Gravar_excel" Click="Gravar_excel_Click" Content="Gravar Teste" Foreground="White"></Button>
+            </DockPanel>
 
 
 

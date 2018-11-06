@@ -24,7 +24,8 @@ namespace Datalogger.Views
         public static Boolean Teste_a_decorrer = false;
         public static Boolean readytosave = false;
         public static string tap_test_m;
-
+        public static string nomerelatorio;
+        public static string nome_manual;
         public NovoTesteV()
         {
             InitializeComponent();
@@ -62,7 +63,7 @@ namespace Datalogger.Views
                 N_teste.IsEnabled = false;
                 Novoteste_btn.IsEnabled = false;
                 Teste_a_decorrer = true;
-                
+                //cria tabela para leitura dos sensores todos 
                 string q = "SELECT Nome From lista_sensores";
                 Database.Database.createtable(q);
                 string q1 = "CREATE TABLE " + novotexte_txt.Text + "(Date varchar(50), " + Database.Database.id[0] + " float, " + Database.Database.id[1] + " float," +
@@ -77,13 +78,13 @@ namespace Datalogger.Views
                 DataSet ds = Database.Database.FillTable(q2);
                 datagrid1.ItemsSource = ds.Tables[0].DefaultView;
 
-
-                string nome = NovoTesteV.Nometest + "_manual";
-                string q3 = "CREATE TABLE " + nome + "(Date varchar(50), [Temperatura cima] varchar(50) , [Temperatura baixo] varchar(50), [Temperatura amb] varchar(50)" +
+                // cria tabela para inserir dados mauais
+                nome_manual = NovoTesteV.Nometest + "_manual";
+                string q3 = "CREATE TABLE " + nome_manual + "(Date varchar(50), [Temperatura cima] varchar(50) , [Temperatura baixo] varchar(50), [Temperatura amb] varchar(50)" +
                     ", [Pressao baixa] varchar(50), [Pressao alta] varchar(50), [Consumo] varchar(50), [observacoes] varchar(MAX))";
-                Database.Database.Excute(q3);                             
-               
-                update_lista_testes();
+                Database.Database.Excute(q3);
+                               
+              
                                               
             }
             else
@@ -151,11 +152,7 @@ namespace Datalogger.Views
         }
                
 
-        private void update_lista_testes()
-        {
-            string q1 = "insert into Lista_Testes (Data,N_Teste,Nome_Teste) values('" + DateTime.Now.ToString() + "','" + N_teste.Text + "', '" + Nometest + "')";
-            Database.Database.Excute(q1);
-        }
+       
 
         
     }

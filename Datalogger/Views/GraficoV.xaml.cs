@@ -58,7 +58,9 @@ namespace Datalogger.Views
             Points14 = new List<DataPoint> { };
             Points15 = new List<DataPoint> { };
             Points16 = new List<DataPoint> { };
-
+            oxyPlot.LegendPlacement = LegendPlacement.Outside;
+            oxyPlot.LegendPosition = LegendPosition.BottomLeft;
+            oxyPlot.LegendOrientation = LegendOrientation.Horizontal;
 
             DataContext = this;
         }
