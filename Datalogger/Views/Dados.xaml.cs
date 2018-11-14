@@ -59,8 +59,7 @@ namespace Datalogger.Views
                 consumo.Text = null;
                 obs.Text = null;
 
-                //gggsdfsdfdfsdvghfghfd
-                ///ghgfh
+                //novo teste feito com sucesso
                 
 
             }
