@@ -40,22 +40,11 @@ namespace Datalogger.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-           
-
-
-            
-
+               
             DataGridCellInfo cellInfo = datagrid1.SelectedCells[3];
-            
-
             DataGridBoundColumn column = cellInfo.Column as DataGridBoundColumn;
-            
-
             FrameworkElement element = new FrameworkElement() { DataContext = cellInfo.Item };
-            BindingOperations.SetBinding(element, TagProperty, column.Binding);
-
-            
+            BindingOperations.SetBinding(element, TagProperty, column.Binding);                        
             Process process = new Process();
             process.StartInfo.UseShellExecute = true;
             process.StartInfo.FileName = NovoTesteV.path + "\\Testes\\" + element.Tag.ToString();
@@ -64,7 +53,6 @@ namespace Datalogger.Views
 
         }
 
-        
-       
+      
     }
 }

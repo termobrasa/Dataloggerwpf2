@@ -32,25 +32,42 @@
                     <oxy:DateTimeAxis Position="Bottom"
                                     StringFormat="HH:mm"
                                     MajorGridlineStyle="Solid" 
-                                    MinorGridlineStyle="Dot"/>
+                                    MinorGridlineStyle="Dot"
+                                    MajorGridlineColor="LightGray"
+                                    MinorGridlineColor="LightGray"
+                                    Title="Tempo [h]"
+                                    IsZoomEnabled="False"
+                                    IsPanEnabled="False"/>
+                    
+                    <oxy:LinearAxis Key="yAxis"                                    
+                                    Position="Left"
+                                    MajorGridlineStyle="Solid" 
+                                    MinorGridlineStyle="Dot"
+                                    MajorGridlineColor="LightGray"
+                                    MinorGridlineColor="LightGray"
+                                    Title="Temperature [ºC]"
+                                    IsZoomEnabled="False"
+                                    IsPanEnabled="False"
+                    />
                 </oxy:Plot.Axes >
+                
                 <oxy:Plot.Series>
-                    <oxy:LineSeries  Name="ln1" ItemsSource="{Binding Points1}"   MarkerType="Square" MarkerSize="1" Color="Blue" />
-                    <oxy:LineSeries  Name="ln2"  ItemsSource="{Binding Points2}"   MarkerType="Square" MarkerSize="1"  Color="Red"/>
-                    <oxy:LineSeries  Name="ln3"  ItemsSource="{Binding Points3}"   MarkerType="Square" MarkerSize="1" Color="YellowGreen" />
-                    <oxy:LineSeries  Name="ln4"  ItemsSource="{Binding Points4}"   MarkerType="Square" MarkerSize="1" Color="CornflowerBlue" />
-                    <oxy:LineSeries  Name="ln5" ItemsSource="{Binding Points5}"   MarkerType="Square" MarkerSize="1" Color="Brown" />
-                    <oxy:LineSeries  Name="ln6" ItemsSource="{Binding Points6}"   MarkerType="Square" MarkerSize="1"  Color="DarkKhaki"/>
-                    <oxy:LineSeries  Name="ln7" ItemsSource="{Binding Points7}"   MarkerType="Square" MarkerSize="1"  Color="DarkViolet"/>
-                    <oxy:LineSeries  Name="ln8" ItemsSource="{Binding Points8}"   MarkerType="Square" MarkerSize="1"  Color="Lime"/>
-                    <oxy:LineSeries  Name="ln9" ItemsSource="{Binding Points9}"   MarkerType="Square" MarkerSize="1" Color="HotPink" />
-                    <oxy:LineSeries  Name="ln10" ItemsSource="{Binding Points10}"   MarkerType="Square" MarkerSize="1"  Color="Indigo"/>
-                    <oxy:LineSeries  Name="ln11"  ItemsSource="{Binding Points11}"   MarkerType="Square" MarkerSize="1"  Color="LightCoral"/>
-                    <oxy:LineSeries  Name="ln12" ItemsSource="{Binding Points12}"   MarkerType="Square" MarkerSize="1"  Color="MediumOrchid"/>
-                    <oxy:LineSeries  Name="ln13" ItemsSource="{Binding Points13}"   MarkerType="Square" MarkerSize="1"  Color="OrangeRed"/>
-                    <oxy:LineSeries  Name="ln14" ItemsSource="{Binding Points14}"   MarkerType="Square" MarkerSize="1"  Color="PaleVioletRed"/>
-                    <oxy:LineSeries  Name="ln15"  ItemsSource="{Binding Points15}"   MarkerType="Square" MarkerSize="1"  Color="Chocolate"/>
-                    <oxy:LineSeries  Name="ln16"  ItemsSource="{Binding Points16}"   MarkerType="Square" MarkerSize="1"  Color="SpringGreen"/>
+                    <oxy:LineSeries  Title="Temp Água de entrada" Name="ln1" ItemsSource="{Binding Points1}"   MarkerType="Square" MarkerSize="1" Color="Blue" />
+                    <oxy:LineSeries  Title="Temp Água de saida" Name="ln2"  ItemsSource="{Binding Points2}"   MarkerType="Square" MarkerSize="1"  Color="Red"/>
+                    <oxy:LineSeries  Title="Entrada permutador" Name="ln3"  ItemsSource="{Binding Points3}"   MarkerType="Square" MarkerSize="1" Color="YellowGreen" />
+                    <oxy:LineSeries  Title="Saida do permutador" Name="ln4"  ItemsSource="{Binding Points4}"   MarkerType="Square" MarkerSize="1" Color="CornflowerBlue" />
+                    <oxy:LineSeries  Title="Entrada da valvula"  Name="ln5" ItemsSource="{Binding Points5}"   MarkerType="Square" MarkerSize="1" Color="Brown" />
+                    <oxy:LineSeries  Title="Saida da valvula" Name="ln6" ItemsSource="{Binding Points6}"   MarkerType="Square" MarkerSize="1"  Color="DarkKhaki"/>
+                    <oxy:LineSeries  Title="Entrada da valvula" Name="ln7" ItemsSource="{Binding Points7}"   MarkerType="Square" MarkerSize="1"  Color="DarkViolet"/>
+                    <oxy:LineSeries  Title="Saida de ar" Name="ln8" ItemsSource="{Binding Points8}"   MarkerType="Square" MarkerSize="1"  Color="Lime"/>
+                    <oxy:LineSeries  Title="Entrada de ar" Name="ln9" ItemsSource="{Binding Points9}"   MarkerType="Square" MarkerSize="1" Color="HotPink" />
+                    <oxy:LineSeries  Title="Temperatura da água 2" Name="ln10" ItemsSource="{Binding Points10}"   MarkerType="Square" MarkerSize="1"  Color="Indigo"/>
+                    <oxy:LineSeries  Title="Entrada do permutador2" Name="ln11"  ItemsSource="{Binding Points11}"   MarkerType="Square" MarkerSize="1"  Color="LightCoral"/>
+                    <oxy:LineSeries  Title="Saida do permutador2" Name="ln12" ItemsSource="{Binding Points12}"   MarkerType="Square" MarkerSize="1"  Color="MediumOrchid"/>
+                    <oxy:LineSeries  Title="Entrada do compressor2" Name="ln13" ItemsSource="{Binding Points13}"   MarkerType="Square" MarkerSize="1"  Color="OrangeRed"/>
+                    <oxy:LineSeries  Title="Saida da valvula2" Name="ln14" ItemsSource="{Binding Points14}"   MarkerType="Square" MarkerSize="1"  Color="PaleVioletRed"/>
+                    <oxy:LineSeries  Title="Entrada de ar2" Name="ln15"  ItemsSource="{Binding Points15}"   MarkerType="Square" MarkerSize="1"  Color="Chocolate"/>
+                    <oxy:LineSeries  Title="Fluxo" Name="ln16"  ItemsSource="{Binding Points16}"   MarkerType="Square" MarkerSize="1"  Color="SpringGreen"/>
 
 
                 </oxy:Plot.Series>

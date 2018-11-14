@@ -4,79 +4,81 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Datalogger.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d"
+               xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             d:DesignHeight="450" d:DesignWidth="800"
+             FontSize="12"
+             >
     <Grid  Background="#FF424242">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="218*"/>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="179*"/>
+            <ColumnDefinition Width="76*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="68*"/>
+            <RowDefinition Height="123*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="75*"/>
         </Grid.RowDefinitions>
-        
-            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5">
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Margin="0,0,74.6,0.2">
             <DockPanel>
                 <Label Content="Nº Teste: "></Label>
-                <TextBox Name="n_teste_txt" Width="100" HorizontalAlignment="Left" IsEnabled="False" > </TextBox>
+                <TextBox Name="n_teste_txt" Width="100" HorizontalAlignment="Left" IsEnabled="False" ></TextBox>
             </DockPanel>
             <DockPanel>
                 <Label Content="Produto: "></Label>
                 <TextBox  Name="nome_teste_txt" IsEnabled="False"  ></TextBox>
             </DockPanel>
-            
-            </StackPanel>
-            
-        
-            <DockPanel Grid.Row="1" Grid.RowSpan="5" Grid.Column="0" Grid.ColumnSpan="4" >
-            <DataGrid  Name="Datagrid1"  >
-               
-                
+
+        </StackPanel>
+
+
+        <DockPanel  Grid.Row="1" Grid.RowSpan="6" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,20,20,20" >
+            <DataGrid  Name="Datagrid1"  
+                       >
+
+
 
             </DataGrid>
         </DockPanel>
-        <StackPanel Grid.Column="4" Grid.ColumnSpan="5"  Grid.Row="1" Grid.RowSpan="5" Margin="20,40,60,0" >
-            <DockPanel  Margin="10,10">
-            <Label Content="Temp Ent água(ºC):"></Label>
-            <TextBox Name="temp_ent" HorizontalAlignment="Right" Width="40" > </TextBox>
+        <StackPanel Grid.Column="4" Grid.ColumnSpan="2"  Grid.Row="1" Grid.RowSpan="5"  >
+            <DockPanel  Margin="5">
+                <Label Content="Temp Ent água(ºC):"></Label>
+                <TextBox Name="temp_ent" HorizontalAlignment="Right" Width="40"  PreviewTextInput="interios_txt_PreviewTextInput"></TextBox>
             </DockPanel>
-            <DockPanel Margin="10,10">
-            <Label Content="Temp Sai água(ºC):"></Label>
-                <TextBox Name="Temp_sai"  HorizontalAlignment="Right" Width="40"></TextBox>
+            <DockPanel Margin="5">
+                <Label Content="Temp Sai água(ºC):"></Label>
+                <TextBox Name="Temp_sai"  HorizontalAlignment="Right" Width="40" PreviewTextInput="interios_txt_PreviewTextInput"></TextBox>
             </DockPanel>
-            <DockPanel Margin="10,10">
-            <Label Content="Temp Ambiente(ºC):"></Label>
-                <TextBox Name="temp_amb"  HorizontalAlignment="Right" Width="40"></TextBox>
+            <DockPanel Margin="5">
+                <Label Content="Temp Ambiente(ºC):"></Label>
+                <TextBox Name="temp_amb"  HorizontalAlignment="Right" Width="40" PreviewTextInput="interios_txt_PreviewTextInput"></TextBox>
             </DockPanel>
-            <DockPanel Margin="10,10">
-            <Label Content="P baixa(bar):"></Label>
-                <TextBox Name="p_bai"  HorizontalAlignment="Right" Width="40"></TextBox>
+            <DockPanel Margin="5">
+                <Label Content="P baixa(bar):"></Label>
+                <TextBox Name="p_bai"  HorizontalAlignment="Right" Width="40" PreviewTextInput="interios_txt_PreviewTextInput"></TextBox>
             </DockPanel>
-            <DockPanel Margin="10,10">
-            <Label Content="P alta(bar):"></Label>
-                <TextBox Name="p_alta"  HorizontalAlignment="Right" Width="40"></TextBox>
+            <DockPanel Margin="5">
+                <Label Content="P alta(bar):"></Label>
+                <TextBox Name="p_alta"  HorizontalAlignment="Right" Width="40" PreviewTextInput="interios_txt_PreviewTextInput"></TextBox>
             </DockPanel>
-            <DockPanel Margin="10,10">
-            <Label Content="Consumo (W):"></Label>
-                <TextBox Name="consumo"  HorizontalAlignment="Right" Width="40"></TextBox>
+            <DockPanel Margin="5">
+                <Label Content="Consumo (W):"></Label>
+                <TextBox Name="consumo"  HorizontalAlignment="Right" Width="40" PreviewTextInput="interios_txt_PreviewTextInput"></TextBox>
             </DockPanel>
 
-            <Label Content="Observações:" Margin="10,10"></Label>
+            <Label Content="Observações:" Margin="5"></Label>
             <TextBox Name="obs"></TextBox>
             <Button Content="Inserir" Name="inserir" Click="inserir_Click" ></Button>
 
         </StackPanel>
-        <DockPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" >
-            
-        </DockPanel>
+        <DockPanel Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center" Margin="95.8,0.2,38.6,-0.4" Width="0" />
     </Grid>
 </UserControl>

@@ -6,55 +6,46 @@
              xmlns:local="clr-namespace:Datalogger.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" 
-             Foreground="White"
-             >
-    
+             Foreground="White">
+
 
     <Grid  Background="#FF424242">
-        <Grid.ColumnDefinitions>           
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="218*"/>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="133*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="123*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="75*"/>
         </Grid.RowDefinitions>
-        <Label Name="label1" Grid.Column="1" Grid.ColumnSpan="4" FontSize="40" HorizontalAlignment="Center"></Label>
-        <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5">
+        <Label Name="label1" Grid.Column="2" Grid.ColumnSpan="2" FontSize="40" HorizontalAlignment="Center" Margin="124.8,0,130.8,78.2" Width="10" Grid.RowSpan="2"></Label>
+        <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="1">
             <DockPanel>
                 <Label Content="Nº Teste: "  Margin="10" Foreground="#FFFF9800" ></Label>
                 <TextBox  Name="N_teste" Width="100" Margin="10" HorizontalAlignment="Left" ></TextBox>
                 <Label Content="Nome do Teste: "  Margin="10" Foreground="#FFFF9800"></Label>
                 <TextBox Name="novotexte_txt" Margin="10" PreviewTextInput="novotexte_txt_PreviewTextInput" Foreground="White" ></TextBox>
-            </DockPanel>            
+            </DockPanel>
             <Button Name="Novoteste_btn" Content="Novo teste" Margin="10,0,10,0" Click="Novoteste_btn_Click" Foreground="White"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="5" Grid.RowSpan="4">
-            <Label Content="Maquina" Foreground="#FFFF9800"></Label>
-            <ComboBox  Name="comboMaq" SelectionChanged="comboMaq_SelectionChanged" Margin="5" >
-                <ComboBoxItem Name="ms">S</ComboBoxItem>
-                <ComboBoxItem Name="ml">M</ComboBoxItem>
-                <ComboBoxItem Name="mxl">XL</ComboBoxItem>
-            </ComboBox>            
+        <StackPanel Grid.Column="5" Grid.RowSpan="4" Grid.ColumnSpan="1" Grid.Row="1">
             <Label Content="Tempo de amostra:" Margin="5" Foreground="#FFFF9800"></Label>
             <TextBox Name="tempo_amos_txt" PreviewTextInput="tempo_amos_txt_PreviewTextInput" Margin="5"></TextBox>
-            <CheckBox Name="tap_test" Content="Teste de tiragens" ></CheckBox>
 
         </StackPanel>
-        <Button Grid.Row="5" Grid.Column="5" Margin="20" Content="Gravar excel" Click="Button_Click" Foreground="White"></Button>
-            
-            
-        <DataGrid x:Name="datagrid1"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="5">
+
+
+        <DataGrid x:Name="datagrid1"  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="4" >
         </DataGrid>
 
     </Grid>
-  
+
 </UserControl>
