@@ -60,7 +60,7 @@ namespace Datalogger.Views
                 obs.Text = null;
 
                 //novo teste feito com sucesso
-                //novo teste
+                //novo teste~//ai que esta bem
 
             }
             else
