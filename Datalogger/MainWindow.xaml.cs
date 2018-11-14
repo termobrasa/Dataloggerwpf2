@@ -13,15 +13,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using MahApps.Metro.Controls;
 using Datalogger.Views;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace Datalogger
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public static SerialPort serial = new SerialPort();
         public MainWindow()
@@ -40,6 +41,7 @@ namespace Datalogger
             content4.Visibility = Visibility.Hidden;
             content5.Visibility = Visibility.Hidden;
             content6.Visibility = Visibility.Hidden;
+            content7.Visibility = Visibility.Hidden;
 
             string[] ports = SerialPort.GetPortNames();
             List<string> _items = new List<string>();
@@ -64,7 +66,9 @@ namespace Datalogger
             content4.Visibility = Visibility.Hidden;
             content5.Visibility = Visibility.Hidden;
             content6.Visibility = Visibility.Hidden;
+            content7.Visibility = Visibility.Hidden;
             ListaV.dispatcherTimer.Stop();
+           
         }
 
        
@@ -77,6 +81,7 @@ namespace Datalogger
             content4.Visibility = Visibility.Hidden;
             content5.Visibility = Visibility.Hidden;
             content6.Visibility = Visibility.Hidden;
+            content7.Visibility = Visibility.Hidden;
             ListaV.dispatcherTimer.Stop();
         }
 
@@ -89,6 +94,7 @@ namespace Datalogger
             content4.Visibility = Visibility.Hidden;
             content5.Visibility = Visibility.Visible;
             content6.Visibility = Visibility.Hidden;
+            content7.Visibility = Visibility.Hidden;
             ListaV.dispatcherTimer.Start();
 
         }
@@ -103,10 +109,11 @@ namespace Datalogger
             content4.Visibility = Visibility.Visible;
             content5.Visibility = Visibility.Hidden;
             content6.Visibility = Visibility.Hidden;
+            content7.Visibility = Visibility.Hidden;
             ListaV.dispatcherTimer.Stop();
         }
 
-        private void Teste24h_btn_Click(object sender, RoutedEventArgs e)
+        private void Lista_testes_Click(object sender, RoutedEventArgs e)
         {
             
             content1.Visibility = Visibility.Hidden;
@@ -115,6 +122,7 @@ namespace Datalogger
             content4.Visibility = Visibility.Hidden;
             content5.Visibility = Visibility.Hidden;
             content6.Visibility = Visibility.Hidden;
+            content7.Visibility = Visibility.Hidden;
             ListaV.dispatcherTimer.Stop();
         }
 
@@ -174,7 +182,19 @@ namespace Datalogger
             content4.Visibility = Visibility.Hidden;
             content5.Visibility = Visibility.Hidden;
             content6.Visibility = Visibility.Visible;
+            content7.Visibility = Visibility.Hidden;
             ListaV.dispatcherTimer.Stop();
+        }
+
+        private void Teste_24h_btn_Click(object sender, RoutedEventArgs e)
+        {
+            content7.Visibility = Visibility.Visible;
+            content1.Visibility = Visibility.Hidden;
+            content2.Visibility = Visibility.Hidden;
+            content3.Visibility = Visibility.Hidden;
+            content4.Visibility = Visibility.Hidden;
+            content5.Visibility = Visibility.Hidden;
+            content6.Visibility = Visibility.Hidden;
         }
     }
 }
