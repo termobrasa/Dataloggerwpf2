@@ -32,11 +32,11 @@
         </Grid.RowDefinitions>
         <DockPanel Grid.ColumnSpan="2" Grid.Column="1" Margin="20">
             <Label Content="Volume: " Foreground="#FFFF9800" ></Label>
-            <TextBox Name="volume_txt"  VerticalAlignment="Top" Foreground="White" ></TextBox>
+            <TextBox Name="volume_txt"  VerticalAlignment="Top" Foreground="White" PreviewTextInput="interios_txt_PreviewTextInput"></TextBox>
         </DockPanel>
         <DockPanel Grid.Column="3" Grid.ColumnSpan="3" Margin="20">
             <Label Content="Consumo Total: " Foreground="#FFFF9800"></Label>
-            <TextBox Name="Consumo_txt" VerticalAlignment="Top" Foreground="White"></TextBox>
+            <TextBox Name="Consumo_txt" VerticalAlignment="Top" Foreground="White" PreviewTextInput="interios_txt_PreviewTextInput"></TextBox>
         </DockPanel>
         <DockPanel Grid.Column="6">
             <Button Name="atualiza_btn" Content="Atualizar" Click="atualiza_btn_Click" Foreground="White" ></Button>

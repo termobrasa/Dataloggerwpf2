@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,8 @@ namespace Datalogger.Views
         public static System.Windows.Threading.DispatcherTimer timer24hon = new System.Windows.Threading.DispatcherTimer();
         public static System.Windows.Threading.DispatcherTimer timer24hoff = new System.Windows.Threading.DispatcherTimer();
         public int i = 0;
-
+        public static string tablename;
+        public static bool teste24_Ready_to_save = false;
 
         public Teste_24h()
         {
@@ -48,8 +50,15 @@ namespace Datalogger.Views
                 string aux = "val" + dados[3] + "on";               
                 MainWindow.serial.Write(aux);
                 timer24hoff.Start();
-                var data = new Test { Date = DateTime.Now.ToString(), Estado = "on" , Valvula=dados[3] };
-                datagrid1.Items.Add(data);
+                while (Serial_port_data.t24hready == false) ;
+               
+                string q1 = "insert into "+ NovoTesteV.nome_tiragens + " (Date,Estado,Valvula,[Temperatura cima],[Temperatura baixo]) values('" + DateTime.Now.ToString() + "', 'on' , '" + dados[3] + "','" + Serial_port_data.Temp_cima24h + "', '" + Serial_port_data.Temp_baixo24h + "')";
+                Database.Database.Excute(q1);
+                string q2 = "select * from " +  NovoTesteV.nome_tiragens + "";
+                
+                DataSet ds = Database.Database.FillTable(q2);
+                datagrid1.ItemsSource = ds.Tables[0].DefaultView;
+
             }
 
         }
@@ -59,25 +68,36 @@ namespace Datalogger.Views
             string aux = "val" + dados[3] + "off";            
             MainWindow.serial.Write(aux);
             timer24hoff.Stop();
+            while (Serial_port_data.t24hready == false) ;
 
+            string q1 = "insert into " +  NovoTesteV.nome_tiragens  + " (Date,Estado,Valvula,[Temperatura cima],[Temperatura baixo]) values('" + DateTime.Now.ToString() + "', 'off' , '" + dados[3] + "','" + Serial_port_data.Temp_cima24h + "', '" + Serial_port_data.Temp_baixo24h + "')";
+            Database.Database.Excute(q1);
 
-            var data = new Test { Date = DateTime.Now.ToString(), Estado = "off" , Valvula = dados[3] };
-            datagrid1.Items.Add(data);
+            string q2 = "select * from " +  NovoTesteV.nome_tiragens  + "";
+            
+            DataSet ds = Database.Database.FillTable(q2);
+            datagrid1.ItemsSource = ds.Tables[0].DefaultView;
 
             dados.Clear();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (MainWindow.serial.IsOpen == true && NovoTesteV.Teste_a_decorrer==true)
+            {
+                timer24hon.Start();
+               
+                string q1 = "CREATE TABLE " + NovoTesteV.nome_tiragens + "(Date varchar(50), [Estado] varchar(50) , [Valvula] varchar(50), [Temperatura cima] float" +
+                    ", [Temperatura baixo] float)";
+                Database.Database.Excute(q1);
+                teste24_Ready_to_save = true;
+            }
             
-            timer24hon.Start();
+            else
+                System.Windows.Forms.MessageBox.Show("-Verifique a se esta ligado \n-Verifique se inicio o teste no menu novo teste, ", "Erro na criaçao de novo teste",
+   System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
         }
 
-        public class Test
-        {
-            public string Date { get; set; }
-            public string Valvula { get; set; }
-            public string Estado { get; set; }
-        }
+        
     }
 }

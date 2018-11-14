@@ -76,22 +76,22 @@ namespace Datalogger.Views
             if (lastrow.Any() == true)
             {
 
-               Points1.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[1])));
-                Points2.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[2])));
-                Points3.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[3])));
-                Points4.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[4])));
-                Points5.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[5])));
-                Points6.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[6])));
-                Points7.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[7])));
-                Points8.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[8])));
-                Points9.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[9])));
-                Points10.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[10])));
-                Points11.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[11])));
-                Points12.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[12])));
-                Points13.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[13])));
-                Points14.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[14])));
-                Points15.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[15])));
-                Points16.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[0])), Double.Parse(lastrow[16])));
+               Points1.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[2])));
+                Points2.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[3])));
+                Points3.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[4])));
+                Points4.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[5])));
+                Points5.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[6])));
+                Points6.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[7])));
+                Points7.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[8])));
+                Points8.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[9])));
+                Points9.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[10])));
+                Points10.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[11])));
+                Points11.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[12])));
+                Points12.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[13])));
+                Points13.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[14])));
+                Points14.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[15])));
+                Points15.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[16])));
+                Points16.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse(lastrow[1])), Double.Parse(lastrow[17])));
 
                 oxyPlot.InvalidatePlot(true);
                 lastrow.Clear();

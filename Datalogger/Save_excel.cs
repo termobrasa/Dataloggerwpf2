@@ -16,9 +16,11 @@ namespace Datalogger
         {
             string c =  NovoTesteV.path + "\\Testes\\" + NovoTesteV.Nometest + "\\" + NovoTesteV.Nometest + ".xls";
             string q1 = "select * from " +NovoTesteV.Nometest + "";
-            string q2 = "select * from " + NovoTesteV.Nometest +"_manual";
+            string q2 = "select * from " + NovoTesteV.nome_manual+"";
+           
             DataTable t1 = Database.Database.exceltable(q1);
             DataTable t2 = Database.Database.exceltable(q2);
+           
 
             Workbook book = new Workbook();
 
@@ -31,9 +33,9 @@ namespace Datalogger
             Worksheet sheet2 = book.Worksheets[1];
             sheet2.Name = "Dados";
             sheet2.Activate();
-            book.Worksheets[2].Remove();
             sheet2.InsertDataTable(t2, true, 1, 1);
 
+           
             sheet2.Range["K1"].Value = "Dados:";
             sheet2.Range["K3"].Value = "COP:";
             sheet2.Range["K4"].Value = "AQUEC POR HORA:";
@@ -52,7 +54,24 @@ namespace Datalogger
             sheet2.Range["k1:l2"].Merge();
             sheet2.Range["k1:l2"].Style.VerticalAlignment = VerticalAlignType.Center;
             sheet2.Range["k1:l2"].Style.HorizontalAlignment = HorizontalAlignType.Center;
+            
+            
 
+            if (Teste_24h.teste24_Ready_to_save == true)
+            {
+                string q3 = "select * from " + NovoTesteV.nome_tiragens;
+                DataTable t3 = Database.Database.exceltable(q3);
+
+
+                Worksheet sheet3 = book.Worksheets[2];
+                sheet3.Name = "Tiragens";
+                sheet3.Activate();
+                sheet3.InsertDataTable(t3, true, 1, 1);
+                sheet3.AllocatedRange.AutoFitColumns();
+            }
+     
+            
+            
 
             book.SaveToFile(c, ExcelVersion.Version97to2003);
             System.Diagnostics.Process.Start(book.FileName);

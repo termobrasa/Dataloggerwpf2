@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -59,7 +60,7 @@ namespace Datalogger.Views
         private void duracao_aque()
         {
             List<string> aux = new List<string>() ;
-            string req = " SELECT date FROM " + NovoTesteV.Nometest + "_manual ";
+            string req = " SELECT date FROM " + NovoTesteV.nome_manual + "";
             aux =Database.Database.colmn_to_list(req);
             if (aux.Count > 1)
             {
@@ -89,7 +90,7 @@ namespace Datalogger.Views
         {
             
                 List<string> aux = new List<string>();
-                string req = " SELECT  [Temperatura cima] FROM " + NovoTesteV.Nometest + "_manual ";
+                string req = " SELECT  [Temperatura cima] FROM " + NovoTesteV.nome_manual+"";
                 aux = Database.Database.colmn_to_list(req);
 
             if (aux.Count > 1)
@@ -97,7 +98,7 @@ namespace Datalogger.Views
                 tempi = Double.Parse(aux[0]);
                 tempf = Double.Parse(aux[aux.Count - 1]);
                 aquec_h = Math.Round(duracaohora + (duracaomin * 0.017), 2);
-                aque_hora = ((tempf - tempi) / aquec_h).ToString() + "C";
+                aque_hora = (Math.Round(( (tempf - tempi) / aquec_h) , 2)).ToString() + "C";
                 aque_bloc.Text = aque_hora ;
                 falta_dados = false;
 
@@ -130,12 +131,15 @@ namespace Datalogger.Views
                 Save_excel.excel();
             NovoTesteV.readytosave = true;
 
-//            string q1 = "insert into Lista_Testes (Data,N_Teste,Nome_Teste,[COP],[Aquecimento por hora],[Tempo de aquecimento],[Consumo]) values('" + DateTime.Now.ToString() + "','" + NovoTesteV.N_test + "', '" + NovoTesteV.Nometest + "','" + cop.ToString() + "', '" + aque_hora + "', dfdsf, '" + Consumo + "')";
-  //          Database.Database.Excute(q1);
-
 
             string q1 = "insert into Lista_Testes (Data,N_Teste,Nome_Teste,[COP],[Aquecimento por hora],[Tempo de aquecimento],[consumo]) values('" + DateTime.Now.ToString() + "','" + NovoTesteV.N_test + "', '" + NovoTesteV.Nometest + "','" + cop.ToString() + "', '" + aque_hora + "', '" + duracao + "', '" + Consumo + "')";
             Database.Database.Excute(q1);
+        }
+
+        private void interios_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9,-]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

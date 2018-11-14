@@ -19,12 +19,16 @@ namespace Datalogger
         public static float Tempmin { get; set; }
         public static float Resol { get; private set; }
         public static int Idsensore { get; private set; }
+        public static string Temp_cima24h { get; private set; }
+        public static string Temp_baixo24h { get; private set; }
+
+        public static bool t24hready = false;
         public static bool Datacomplete = false;
 
 
         public static List<string> tempdataux = new List<string>();
         public static List<string> tempdata = new List<string>();
-        public static List<double> tempdata1 = new List<double>();
+        
 
         public static void Serialr()
         {
@@ -62,9 +66,13 @@ namespace Datalogger
                 
                 Datacomplete = true;
 
-
-
-
+            }
+            if (tempdataux[0] == "t24h")
+            {
+                
+                Temp_cima24h = tempdataux[1];
+                Temp_baixo24h = tempdataux[2];
+                t24hready = true;
             }
 
 

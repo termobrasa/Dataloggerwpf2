@@ -13,15 +13,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using MahApps.Metro.Controls;
 using Datalogger.Views;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace Datalogger
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public static SerialPort serial = new SerialPort();
         public MainWindow()
@@ -67,6 +68,7 @@ namespace Datalogger
             content6.Visibility = Visibility.Hidden;
             content7.Visibility = Visibility.Hidden;
             ListaV.dispatcherTimer.Stop();
+           
         }
 
        

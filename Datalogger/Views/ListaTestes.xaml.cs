@@ -53,11 +53,6 @@ namespace Datalogger.Views
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            string q2 = "select * from  lista_Testes";
-            DataSet ds = Database.Database.FillTable(q2);
-            datagrid1.ItemsSource = ds.Tables[0].DefaultView;
-        }
+      
     }
 }

@@ -31,11 +31,7 @@
         </DockPanel>
         
         <DataGrid x:Name="datagrid1"  Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="4">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Date}" ClipboardContentBinding="{x:Null}" Header="Date"/>
-                <DataGridTextColumn Binding="{Binding Path=Estado}" ClipboardContentBinding="{x:Null}" Header="Estado"/>
-                <DataGridTextColumn Binding="{Binding Path=Valvula}" ClipboardContentBinding="{x:Null}" Header="Valvula"/>
-            </DataGrid.Columns>
+           
         </DataGrid>
         
     </Grid>

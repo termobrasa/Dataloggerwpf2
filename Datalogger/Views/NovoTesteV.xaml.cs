@@ -26,6 +26,7 @@ namespace Datalogger.Views
         public static string tap_test_m;
         public static string nomerelatorio;
         public static string nome_manual;
+        public static string nome_tiragens;
         public NovoTesteV()
         {
             InitializeComponent();
@@ -40,10 +41,7 @@ namespace Datalogger.Views
             MainWindow.serial.Write("A");
            
                 update_table();
-
-
-
-
+                                 
 
         }
 
@@ -55,7 +53,8 @@ namespace Datalogger.Views
                 dispatcherTimer.Interval = new TimeSpan(0, 0, int.Parse(tempo_amos_txt.Text));
                 dispatcherTimer.Start();
                 
-                Nometest = novotexte_txt.Text;
+                Nometest = "["+novotexte_txt.Text+"]";
+                nome_tiragens = "[" + novotexte_txt.Text + "_tiragens]";
                 N_test = N_teste.Text;
                 label1.Content = novotexte_txt.Text;
 
@@ -66,22 +65,22 @@ namespace Datalogger.Views
                 //cria tabela para leitura dos sensores todos 
                 string q = "SELECT Nome From lista_sensores";
                 Database.Database.createtable(q);
-                string q1 = "CREATE TABLE " + novotexte_txt.Text + "(Date varchar(50), " + Database.Database.id[0] + " float, " + Database.Database.id[1] + " float," +
-                     " " + Database.Database.id[2] + " float, " + Database.Database.id[3] + " float, " + Database.Database.id[4] + " float," +
-                     " " + Database.Database.id[5] + " float, " + Database.Database.id[6] + " float, " + Database.Database.id[7] + " float, " +
-                     " " + Database.Database.id[8] + " float, " + Database.Database.id[9] + " float, " + Database.Database.id[10] + " float, " +
-                     " " + Database.Database.id[11] + " float," + Database.Database.id[12] + " float, " + Database.Database.id[13] + " float," +
-                     " " + Database.Database.id[14] + " float , Flow float)";
+                string q1 = "CREATE TABLE [dbo]."+Nometest+" ([Id]  INT IDENTITY (1, 1) NOT NULL, Date varchar(50), [" + Database.Database.id[0] + "] float, [" + Database.Database.id[1] + "] float," +
+                     " [" + Database.Database.id[2] + "] float, [" + Database.Database.id[3] + "] float, [" + Database.Database.id[4] + "] float," +
+                     " [" + Database.Database.id[5] + "] float, [" + Database.Database.id[6] + "] float, [" + Database.Database.id[7] + "] float, " +
+                     " [" + Database.Database.id[8] + "] float, [" + Database.Database.id[9] + "] float, [" + Database.Database.id[10] + "] float, " +
+                     " [" + Database.Database.id[11] + "] float,[" + Database.Database.id[12] + "] float, [" + Database.Database.id[13] + "] float," +
+                     " [" + Database.Database.id[14] + "] float , Flow float)";
 
                 Database.Database.Excute(q1);
-                string q2 = "select * from " + novotexte_txt.Text + "";
+                string q2 = "select * from " + Nometest + "";
                 DataSet ds = Database.Database.FillTable(q2);
                 datagrid1.ItemsSource = ds.Tables[0].DefaultView;
 
                 // cria tabela para inserir dados mauais
-                nome_manual = NovoTesteV.Nometest + "_manual";
-                string q3 = "CREATE TABLE " + nome_manual + "(Date varchar(50), [Temperatura cima] varchar(50) , [Temperatura baixo] varchar(50), [Temperatura amb] varchar(50)" +
-                    ", [Pressao baixa] varchar(50), [Pressao alta] varchar(50), [Consumo] varchar(50), [observacoes] varchar(MAX))";
+                nome_manual ="["+ novotexte_txt.Text + "_manual]";
+                string q3 = "CREATE TABLE " + nome_manual + "(Date varchar(50), [Temperatura cima] float , [Temperatura baixo] float, [Temperatura amb] float" +
+                    ", [Pressao baixa] float, [Pressao alta] float, [Consumo] float, [observacoes] varchar(MAX))";
                 Database.Database.Excute(q3);
                                
               
@@ -122,10 +121,10 @@ namespace Datalogger.Views
               
 
 
-                 string q1 = "INSERT into " + novotexte_txt.Text + " (Date,"+ Database.Database.id[0].Replace('.', ',') + "," + Database.Database.id[1] + "," + Database.Database.id[2] + "," + Database.Database.id[3] + "," + Database.Database.id[4] + "," + Database.Database.id[5] + "," +
-                      "" + Database.Database.id[6] + "," + Database.Database.id[7] + "," + Database.Database.id[8] + "," + Database.Database.id[9] + "," +
-                      "" + Database.Database.id[10] + "," + Database.Database.id[11] + "," + Database.Database.id[12] + "," + Database.Database.id[13] + "," +
-                      "" + Database.Database.id[14] + ", "+ Database.Database.id[15] + ") " +
+                 string q1 = "INSERT into " + Nometest + " (Date,["+ Database.Database.id[0] + "],[" + Database.Database.id[1] + "],[" + Database.Database.id[2] + "],[" + Database.Database.id[3] + "],[" + Database.Database.id[4] + "],[" + Database.Database.id[5] + "]," +
+                      "[" + Database.Database.id[6] + "],[" + Database.Database.id[7] + "],[" + Database.Database.id[8] + "],[" + Database.Database.id[9] + "]," +
+                      "[" + Database.Database.id[10] + "],[" + Database.Database.id[11] + "],[" + Database.Database.id[12] + "],[" + Database.Database.id[13] + "]," +
+                      "[" + Database.Database.id[14] + "],["+ Database.Database.id[15] + "]) " +
                       "values('" + DateTime.Now + "'," + Serial_port_data.tempdata[1] + "," + "" + Serial_port_data.tempdata[2] + "," +
                       "" + Serial_port_data.tempdata[3] + "," + Serial_port_data.tempdata[4] + "," + Serial_port_data.tempdata[5] + "," + "" + Serial_port_data.tempdata[6] + "," +
                       "" + Serial_port_data.tempdata[7] + "," + Serial_port_data.tempdata[8] + "," + Serial_port_data.tempdata[9] + "," + "" + Serial_port_data.tempdata[10] + "," +
@@ -133,7 +132,7 @@ namespace Datalogger.Views
                       
                
 
-                string q2 = "select * from " + novotexte_txt.Text + "";
+                string q2 = "select * from " + Nometest + "";
                 Database.Database.Excute(q1);
                 DataSet ds = Database.Database.FillTable(q2);
                 datagrid1.ItemsSource = ds.Tables[0].DefaultView;
