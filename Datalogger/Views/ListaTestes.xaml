@@ -26,7 +26,8 @@
         <DataGrid  Name="datagrid1" Grid.ColumnSpan="5" Grid.RowSpan="5" Margin="50,50,0,0" ></DataGrid>
         <StackPanel Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4">
             <Button Content="Open" Margin="20" Click="Button_Click"></Button>
+            <Button Content="Comparar Testes" Margin="20" Click="Button_Click_1"></Button>
         </StackPanel>
-
+            
     </Grid>
 </UserControl>

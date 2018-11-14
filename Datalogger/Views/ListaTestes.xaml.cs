@@ -29,22 +29,22 @@ namespace Datalogger.Views
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            
-                string q2 = "select * from  lista_Testes";                
-                DataSet ds = Database.Database.FillTable(q2);
-                datagrid1.ItemsSource = ds.Tables[0].DefaultView;
 
-           
+            string q2 = "select * from  lista_Testes";
+            DataSet ds = Database.Database.FillTable(q2);
+            datagrid1.ItemsSource = ds.Tables[0].DefaultView;
+
+
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-               
+
             DataGridCellInfo cellInfo = datagrid1.SelectedCells[3];
             DataGridBoundColumn column = cellInfo.Column as DataGridBoundColumn;
             FrameworkElement element = new FrameworkElement() { DataContext = cellInfo.Item };
-            BindingOperations.SetBinding(element, TagProperty, column.Binding);                        
+            BindingOperations.SetBinding(element, TagProperty, column.Binding);
             Process process = new Process();
             process.StartInfo.UseShellExecute = true;
             process.StartInfo.FileName = NovoTesteV.path + "\\Testes\\" + element.Tag.ToString();
@@ -53,6 +53,13 @@ namespace Datalogger.Views
 
         }
 
-      
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Comparacao_testes win2 = new Comparacao_testes();
+            win2.Show();
+
+
+        }
     }
 }

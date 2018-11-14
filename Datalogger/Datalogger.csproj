@@ -131,6 +131,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Comparacao_testes.xaml.cs">
+      <DependentUpon>Comparacao_testes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Database\Database.cs" />
     <Compile Include="Save_excel.cs" />
     <Compile Include="Serial_port_data.cs" />
@@ -155,6 +158,10 @@
     <Compile Include="Views\Teste 24h.xaml.cs">
       <DependentUpon>Teste 24h.xaml</DependentUpon>
     </Compile>
+    <Page Include="Comparacao_testes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
